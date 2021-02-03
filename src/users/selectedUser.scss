@@ -1,0 +1,30 @@
+.userContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  .user {
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    border-radius: 4px;
+    .avatar {
+      margin-bottom: 20px;
+    }
+    .text {
+      font-size: 18px;
+      font-weight: 600;
+      padding: 10px 0;
+    }
+  }
+  .back {
+    margin: 10px;
+    font-size: 20px;
+    color: black;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 4px;
+  }
+}

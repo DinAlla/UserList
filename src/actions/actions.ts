@@ -1,5 +1,5 @@
 import {Dispatch} from 'redux';
-import { setUsersList } from './actionsCreators';
+import {setSelectedUser, setUsersList } from './actionsCreators';
 
 const apiRequest = async (url: string) => {
   return fetch(url, {
@@ -16,8 +16,14 @@ const apiRequest = async (url: string) => {
 
 export const apiLoadUserList = async (page: number, dispatch: Dispatch) => {
   const res = await apiRequest(`https://reqres.in/api/users?page=${page}`);
-  console.log(res, 'res');
   if (res.data) {
     dispatch(setUsersList(res.data));
+  }
+};
+
+export const apiLoadUserById = async (userId: string, dispatch: Dispatch) => {
+  const res = await apiRequest(`https://reqres.in/api/users/${userId}`);
+  if (res.data) {
+    dispatch(setSelectedUser(res.data));
   }
 };
