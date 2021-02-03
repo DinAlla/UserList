@@ -18,7 +18,7 @@ const UsersListContainer = ({history}: any) => {
   };
   return (
       <div className="usersContainer">
-        {userCurrentList.map((user: UserItem) => (
+        {userCurrentList.length ? userCurrentList.map((user: UserItem) => (
             <div key={user.id}
                  onClick={redirectToUser(user.id)}
                  className="user"
@@ -29,7 +29,8 @@ const UsersListContainer = ({history}: any) => {
               {user.first_name}
               {user.last_name}
             </div>
-        ))}
+        ))
+            : <div>Loading...</div>}
       </div>
   );
 };
